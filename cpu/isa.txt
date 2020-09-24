@@ -1,0 +1,120 @@
+A = A register, 8-bit, ALU input A
+B = B register, 8-bit, ALU input B
+C = general purpose register 0, 8-bit
+D = generap purpose register 1, 8-bit
+I = general purpose 16-bit register
+Il = low byte of I
+Ih = high byte of I
+M = a memory location (stored in MAR, a 16-bit register, implicitly loaded by instructions that use it, not user-accessible)
+
+Opcode            Name
+0x00              NOP
+
+0x01              ADD A
+0x02              ADD B
+0x03              ADD C
+0x04              ADD D
+0x05              ADC A
+0x06              ADC B
+0x07              ADC C
+0x08              ADC D
+0x09              SUB A
+0x0A              SUB B
+0x0B              SUB C
+0x0C              SUB D
+0x0D              SBC A
+0x0E              SBC B
+0x0F              SBC C
+0x10              SBC D
+
+0x11              AND A
+0x12              AND B
+0x13              AND C
+0x14              AND D
+0x15              OR A
+0x16              OR B
+0x17              OR C
+0x18              OR D
+0x19              XOR A
+0x1A              XOR B
+0x1B              XOR C
+0x1C              XOR D
+0x1D              NOT A
+0x1E              NOT B
+0x1F              NOT C
+0x20              NOT D
+
+0x21              LSH A
+0x22              LSH B
+0x23              LSH C
+0x24              LSH D
+0x25              RSH A
+0x26              RSH B
+0x27              RSH C
+0x28              RSH D
+
+0x29              MOV A B
+0x2A              MOV A C
+0x2B              MOV A D
+0x2C              MOV B A
+0x2D              MOV B C
+0x2E              MOV B D
+0x2F              MOV C A
+0x30              MOV C B
+0x31              MOV C D
+0x32              MOV D A
+0x33              MOV D B
+0x34              MOV D C
+0x35              MOV Il A
+0x36              MOV Il B
+0x37              MOV Il C
+0x38              MOV Il D
+0x39              MOV Ih A
+0x3A              MOV Ih B
+0x3B              MOV Ih C
+0x3C              MOV Ih D
+0x3D              MOV A Il
+0x3E              MOV B Il
+0x3F              MOV C Il
+0x40              MOV D Il
+0x41              MOV A Ih
+0x42              MOV B Ih
+0x43              MOV C Ih
+0x44              MOV D Ih
+0x45             MOV PC I
+0x46              MOV I PC
+
+0x47              LD A M
+0x48              LD B M
+0x49              LD C M
+0x4A              LD D M
+0x4B              ST A M
+0x4C              ST B M
+0x4D              ST C M
+0x4E              ST D M
+0x4F              LD A I
+0x50              LD B I
+0x51              LD C I
+0x52              LD D I
+0x53              ST A I
+0x54              ST B I
+0x55              ST C I
+0x56              ST D I
+0x57              LD Il M
+0x58              LD Ih M
+0x59              ST Il M
+0x5A              ST Ih M
+
+0x5B              JZ M
+0x5C              JC M
+0x5D              JMP M
+0x5E              JZ I
+0x5F              JC I
+0x60              JMP I
+
+0x61              SEZ
+0x62              SEC
+0x63              CLZ
+0x64              CLC
+
+0x65              HLT
